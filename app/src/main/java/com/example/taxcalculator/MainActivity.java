@@ -14,12 +14,14 @@ import androidx.cardview.widget.CardView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class MainActivity extends AppCompatActivity {
     TextInputEditText Salary_Input;
     TextView tax_before_CESS, tax_after_CESS, tax_total, amount_taking_home;
     LinearLayout tax_print_out;
     Button button;
-    CardView card_start;
+    NeumorphCardView card_start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

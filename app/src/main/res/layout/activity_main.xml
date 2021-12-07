@@ -59,12 +59,11 @@
         android:layout_height="0dp"
         android:layout_weight="3"
         android:background="@drawable/card_background"
-        android:elevation="36dp"
-        >
+        android:elevation="36dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
 
             <TextView
@@ -120,20 +119,22 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <androidx.appcompat.widget.AppCompatButton
+
+                    <soup.neumorphism.NeumorphButton
                         android:id="@+id/button"
-                        android:layout_width="0dp"
-                        android:layout_height="52dp"
+                        style="@style/Widget.Neumorph.Button"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="15dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ripple_effect"
-
-                        android:fontFamily="@font/seg_ui_semibold"
                         android:text="Check"
                         android:textAllCaps="false"
-                        android:textColor="@color/colorButtonText"
-                        android:textSize="16dp" />
+                        android:textColor="#111111"
+                        android:textSize="16dp"
+                        app:neumorph_shadowColorDark="#2f2762"
+                        app:neumorph_shadowColorLight="#F0F0F3" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -327,31 +328,30 @@
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
+
+
+                <soup.neumorphism.NeumorphCardView
                     android:id="@+id/card_start"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:backgroundTint="#1b1638"
-
-                    app:cardCornerRadius="10dp">
-
+                    app:neumorph_shadowColorDark="#8d81cc"
+                    app:neumorph_shadowColorLight="#F0F0F3"
+                    app:neumorph_shapeType="basin"
+                    style="@style/Widget.Neumorph.CardView"
+                    >
                     <pl.droidsonroids.gif.GifImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
+                        android:layout_margin="30dp"
                         android:background="#fff"
                         android:src="@drawable/jeff" />
-                </androidx.cardview.widget.CardView>
-
+                </soup.neumorphism.NeumorphCardView>
 
             </LinearLayout>
 
 
         </RelativeLayout>
     </ScrollView>
-
-
 
 
 </LinearLayout>
