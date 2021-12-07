@@ -1,12 +1,16 @@
 package com.example.taxcalculator;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -15,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tax_before_CESS, tax_after_CESS, tax_total, amount_taking_home;
     LinearLayout tax_print_out;
     Button button;
+    CardView card_start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +32,19 @@ public class MainActivity extends AppCompatActivity {
         tax_total = findViewById(R.id.tax_total);
         amount_taking_home = findViewById(R.id.amount_taking_home);
         button = findViewById(R.id.button);
+        card_start = findViewById(R.id.card_start);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tax_print_out.setVisibility(View.VISIBLE);
-                Tax_Calculation();
-
+                if (TextUtils.isEmpty(Salary_Input.getText().toString())) {
+                    Salary_Input.setError("This Field can't be empty");
+                } else {
+                    tax_print_out.setVisibility(View.VISIBLE);
+                    card_start.setVisibility(View.GONE);
+                    InputMethodManager inputMethodManager = (InputMethodManager) MainActivity.this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(MainActivity.this.getCurrentFocus().getWindowToken(), 0);
+                    Tax_Calculation();
+                }
             }
         });
 
@@ -44,21 +56,22 @@ public class MainActivity extends AppCompatActivity {
         double tax = 0;
         int remaining = 0;
         if (tax_payable_salary <= 250000) {
-            System.out.println("Tax Amount:-\t" + tax);
-            tax_total.append(String.valueOf(tax));
-
+            tax_total.setText(String.valueOf(tax));
+            tax_before_CESS.setText(String.valueOf(0));
+            tax_after_CESS.setText(String.valueOf(0));
+            amount_taking_home.setText(String.valueOf(Salary_Input.getText()));
             return;
 
         } else if (tax_payable_salary < 500000) {
-            System.out.println("Your tax amount 12,500 will be paid by government Rebates");
-            tax_total.append(String.valueOf(tax));
+            tax_total.setText(String.valueOf(tax));
+            tax_before_CESS.setText(String.valueOf(0));
+            tax_after_CESS.setText(String.valueOf(0));
+            amount_taking_home.setText(String.valueOf(Salary_Input.getText()));
             return;
         } else {
             if (tax_payable_salary <= 1000000) {
                 tax = 12500;
-                System.out.println("Tax for Rs 2,50,000 to Rs 5,00,000:-\t" + tax);
                 remaining = tax_payable_salary - 500000;
-                System.out.println("Tax for Rs " + remaining + ":-\t" + remaining * 0.2);
                 tax = tax + (remaining * 0.2);
 
 
@@ -67,16 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 remaining = tax_payable_salary - 1000000;
                 tax = tax + (remaining * 0.3);
 
-
             }
 
         }
 
         double totalTax_After_CESS = tax + tax * 0.04;
-        tax_before_CESS.append(String.valueOf(tax));
-        tax_after_CESS.append(String.valueOf(tax * 0.4));
-        tax_total.append(String.valueOf(totalTax_After_CESS));
-        amount_taking_home.append(String.valueOf((tax_payable_salary - totalTax_After_CESS)));
+        tax_before_CESS.setText(String.valueOf(tax));
+        tax_after_CESS.setText(String.valueOf(tax * 0.4));
+        tax_total.setText(String.valueOf(totalTax_After_CESS));
+        amount_taking_home.setText(String.valueOf((tax_payable_salary - totalTax_After_CESS)));
 
 
     }

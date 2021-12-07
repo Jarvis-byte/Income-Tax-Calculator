@@ -6,13 +6,16 @@
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable-v24/back_icon.xml" value="0.1" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable-v24/violet_circular_border.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable-v24/white_circular_border.xml" value="0.1037037037037037" />
+        <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/bg_roundrect_ripple_light_border.xml" value="0.3435185185185185" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/button_background.xml" value="0.1" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/card_background.xml" value="0.1" />
+        <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/card_edge.xml" value="0.3435185185185185" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/edit_text_background.xml" value="0.1" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/grey_circular_border.xml" value="0.3466796875" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/drawable/ic_baseline_drag_handle_24.xml" value="0.3828125" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/font/segoe_ui_bold.xml" value="0.1" />
         <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/arkam/AndroidStudioProjects/Taxcalculator/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
       </map>
     </option>
   </component>
